@@ -6,7 +6,7 @@
 class Bpex {
 public:
   Bpex();
-  ~Bpex();
+  ~Bpex() = default;
 
 private:
   // Load configuration, setup redis.

@@ -4,6 +4,8 @@
 
 #include <map>
 
+namespace common {
+
 // This class used to support reading configuration from file.
 class ConfigFileParser {
 public:
@@ -15,12 +17,14 @@ public:
   void ReadFromFile(const std::string& file_name);
 
   // Parse and get data.
-  std::string GetValue(const std::string& key);
+  const std::string& GetValue(const std::string& key);
   int GetInt(const std::string& key);
   double GetDouble(const std::string& key);
 
 private:
   std::map<std::string, std::string> data_;
 };
+
+} // namespace common
 
 #endif  // COMMON_CONFIG_FILE_PARSER_H_
