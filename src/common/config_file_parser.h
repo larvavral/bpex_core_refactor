@@ -17,7 +17,8 @@ public:
   void ReadFromFile(const std::string& file_name);
 
   // Parse and get data.
-  const std::string& GetValue(const std::string& key);
+  // Return true if key is existed in data_ and vice versa.
+  std::string GetValue(const std::string& key);
   int GetInt(const std::string& key);
   double GetDouble(const std::string& key);
 

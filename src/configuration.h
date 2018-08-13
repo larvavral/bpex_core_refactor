@@ -3,15 +3,11 @@
 
 #include <string>
 
-namespace {
-
 struct RedisServerInformation {
   std::string ip;
-  std::string port;
+  int port;
   std::string password;
 };
-
-}
 
 // This class contains all settings of this application.
 // It's a singleton.

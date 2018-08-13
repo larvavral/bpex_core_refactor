@@ -26,7 +26,7 @@ void Configuration::LoadConfig(const std::string& file_name) {
   common::ConfigFileParser config_file_parser(file_name);
 
   redis_server_.ip = config_file_parser.GetValue(kRedisServerIp);
-  redis_server_.port = config_file_parser.GetValue(kRedisServerPort);
+  redis_server_.port = config_file_parser.GetInt(kRedisServerPort);
   redis_server_.password = config_file_parser.GetValue(kRedisServerPassword);
 }
 

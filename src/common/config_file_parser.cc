@@ -59,12 +59,15 @@ void ConfigFileParser::ReadFromFile(const std::string& file_name) {
     file.close();
 }
 
-const std::string& ConfigFileParser::GetValue(const std::string& key) {
-  return data_[key];
+std::string ConfigFileParser::GetValue(const std::string& key) {
+  return data_.find(key) == data_.end() ? std::string() : data_[key];
 }
 
 int ConfigFileParser::GetInt(const std::string& key) {
-  return 0;
+  std::string value = GetValue(key);
+  size_t pos;
+  int result = stoi(value, &pos);
+  return pos != value.size() ? 0 : result;
 }
 
 double ConfigFileParser::GetDouble(const std::string& key) {
