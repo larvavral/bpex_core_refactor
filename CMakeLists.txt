@@ -13,7 +13,7 @@ include_directories(src)
 link_directories(lib)
 #set (PROJECT_LINK_LIBS event hiredis event_core boost_program_options pthread )
 # Use libhiredis.
-set(PROJECT_LINK_LIBS event libhiredis.a)
+set(PROJECT_LINK_LIBS libevent.a libhiredis.a)
 
 file(GLOB CPP_SOURCES "src/*.cc")
 file(GLOB COMMON_SOURCES "src/common/*.cc")
